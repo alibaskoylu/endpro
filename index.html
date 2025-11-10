@@ -1244,5 +1244,97 @@ header, .topbar, .logo-bar { background: transparent !important; }
   }
 </style>
 
+
+<style id="olive-neo-v10-hotfix">
+  /* Kategori aç/kapa HOTFIX: varsayılan kapalı; JS açınca görünür */
+  .kategori .urunler{ display: none !important; }
+  .kategori .urunler[style*="display: block"],
+  .kategori .urunler[style*="display: grid"],
+  .kategori.acik .urunler,
+  .kategori.open .urunler,
+  .kategori[aria-expanded="true"] .urunler{
+    display: grid !important;
+  }
+</style>
+
+
+<!-- === OLIVE NEO v10.1 • Mobile Pack (responsive & touch) === -->
+<style id="olive-neo-v10-mobile-pack">
+  /* Fluid base type (prevents iOS zoom) */
+  html{ font-size: clamp(15px, 1.6vw, 17px); }
+  .search-box input{ font-size:16px !important; } /* iOS zoom guard */
+
+  /* Sticky header on mobile for quick search/access */
+  @media (max-width: 900px){
+    .header{ position: sticky; top:0; z-index: 100; }
+  }
+
+  /* Touch targets & spacing */
+  .kategori-header{
+    min-height: 48px; /* tap-target */
+    padding: 16px 18px !important;
+  }
+  .kategori-header .ok{
+    transition: transform .25s ease;
+  }
+  /* Arrow rotate when open */
+  .kategori.acik .kategori-header .ok,
+  .kategori.open .kategori-header .ok,
+  .kategori[aria-expanded="true"] .kategori-header .ok{ transform: rotate(180deg); }
+
+  /* Grid: scale across sizes */
+  .kategori .urunler{ grid-auto-rows: 1fr; }
+  @media (max-width: 900px){
+    .kategori{ width: 94% !important; }
+    .kategori .urunler{ grid-template-columns: repeat(2, minmax(0,1fr)) !important; gap:14px !important; }
+    .urun{ padding:12px !important; }
+    .urun img{ height: 160px !important; }
+  }
+  @media (max-width: 480px){
+    .kategori .urunler{ grid-template-columns: 1fr !important; gap:12px !important; }
+    .urun img{ height: 190px !important; }
+  }
+
+  /* Reduce heavy effects on mobile for performance */
+  @media (max-width: 768px){
+    .header, .kategori-header, .urun, .modal-icerik{
+      -webkit-backdrop-filter: blur(6px) !important;
+      backdrop-filter: blur(6px) !important;
+      box-shadow: 0 6px 16px rgba(0,0,0,.12) !important;
+    }
+  }
+
+  /* Search: full width and pinned last row on small screens */
+  @media (max-width: 900px){
+    .header{ flex-wrap: wrap; gap:10px; }
+    .search-box{ width:100% !important; order:3; }
+    .logo img{ width: 180px !important; }
+  }
+
+  /* Modal: image box stable height on small devices */
+  @media (max-width:600px){
+    #product-modal-root > div > div > div:first-child{
+      height: 240px !important; flex: 0 0 240px !important;
+    }
+    #product-modal-root img{
+      height: 100% !important; object-fit: contain !important;
+    }
+  }
+
+  /* Buttons tap feedback */
+  .admin-btn, .detay-btn{
+    transform: translateY(0); transition: transform .15s ease, box-shadow .2s ease;
+  }
+  .admin-btn:active, .detay-btn:active{ transform: translateY(1px); }
+
+  /* Accessibility: reduce motion */
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; animation: none !important; }
+  }
+
+  /* Android tap-highlight fix */
+  *{ -webkit-tap-highlight-color: rgba(26,99,90,.08); }
+</style>
+
 </body>
 </html>
