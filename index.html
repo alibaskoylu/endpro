@@ -1137,129 +1137,238 @@ header, .topbar, .logo-bar { background: transparent !important; }
 </style>
 
 
-<!-- === APPLE CLEAN PRO v1.0 (Minimal Corporate White) === -->
-<style id="apple-clean-pro">
-  :root{
-    --ink:#0e1512; --muted:#5f6b66; --line:#e6e9eb; --line-2:#dfe4e6;
-    --bg:#f6f7f8; --card:#ffffff; --accent:#0f1412;
-  }
+<!-- === PREMIUM UI LAYER • Corporate/Premium polish (non-breaking) === -->
+<style id="premium-ui-css">
+  /* Smooth accordion for category product lists */
+  .urunler{ overflow: hidden; transition: max-height .28s ease, opacity .18s ease; }
+  .urunler.__animating{ will-change: max-height, opacity; }
+  .kategori.open .urunler{ opacity: 1; }
+  .kategori:not(.open) .urunler{ opacity: 0.0; }
 
-  html, body{
-    background: var(--bg) !important;
-    color: var(--ink) !important;
-    font-family: "Inter", system-ui, -apple-system, Segoe UI, Arial, sans-serif !important;
-    text-shadow: none !important;
-  }
+  /* Headers: keyboard focus outline */
+  .kategori-header:focus{ outline: 2px solid rgba(26,99,90,.3); outline-offset: 2px; }
 
-  /* Header: flat white, subtle divider */
-  .header, .topbar, .logo-bar{
-    background:#fff !important;
-    -webkit-backdrop-filter:none !important; backdrop-filter:none !important;
-    box-shadow:none !important;
-    border-bottom:1px solid var(--line) !important;
-  }
-  .header{
-    display:flex !important; align-items:center !important; justify-content:space-between !important;
-    padding:12px 16px !important; text-align:left !important; gap:12px !important;
-  }
-  .logo{ display:flex; align-items:center; gap:8px; }
-  .logo img{ width:200px !important; height:auto !important; filter:none !important; }
+  /* Search highlight */
+  mark.ui-hl{ background: #fff4a8; color: inherit; padding: 0 2px; border-radius: 3px; }
 
-  /* Search: plain, quiet */
-  .search-box{
-    position:static !important;
-    display:flex !important; align-items:center !important; gap:8px !important;
-    background:#fff !important; border:1px solid var(--line) !important;
-    border-radius:10px !important; padding:8px 12px 8px 36px !important;
-    box-shadow:none !important; width:min(420px,40vw) !important;
-  }
-  .search-box::before{ left:12px !important; opacity:.7 !important; }
-  .search-box input{ color:#0e1512 !important; font-size:14.5px !important; width:100% !important; }
+  /* Modal scroll lock helper */
+  body.__lock{ overflow: hidden; }
 
-  /* Login button: outline */
-  .header .admin-btn{
-    position:static !important; order:3;
-    background:#fff !important; color:#0e1512 !important;
-    border:1px solid var(--line) !important; border-radius:10px !important; font-weight:600 !important;
-    padding:9px 12px !important; box-shadow:none !important;
-  }
-  .header .admin-btn:hover{ border-color: var(--line-2) !important; background:#fafbfb !important; }
-
-  /* Title */
-  h1{ color:#111 !important; font-weight:700 !important; font-size:26px !important; margin:18px 0 6px !important; text-shadow:none !important; }
-
-  /* ===== Categories: ultra minimal, left-anchored ===== */
-  .kategori{
-    max-width: 1160px !important; width: 96% !important;
-    margin: 12px 0 16px 12px !important;  /* left bias */
-  }
-
-  .kategori-header{
-    background:#fff !important;
-    border:1px solid var(--line) !important;
-    border-radius:8px !important;
-    padding:8px 12px !important;
-    min-height:36px !important;
-    display:flex !important; align-items:center !important; gap:8px !important;
-    box-shadow:none !important; color:#0e1512 !important;
-    font-weight:600 !important; font-size:14.5px !important; letter-spacing:.1px !important;
-  }
-  .kategori-header:hover{ background:#fafbfb !important; border-color: var(--line-2) !important; }
-  .kategori-header .ok{ margin-left:auto !important; color:#111 !important; font-weight:800 !important; font-size:14px !important; }
-
-  /* Keep categories CLOSED by default; open via JS (or .open/.acik/aria-expanded) */
-  .kategori .urunler{ display:none !important; }
-  .kategori .urunler[style*="display: block"],
-  .kategori .urunler[style*="display: grid"],
-  .kategori.open .urunler,
-  .kategori.acik .urunler,
-  .kategori[aria-expanded="true"] .urunler{ display:grid !important; }
-
-  /* Product grid and cards */
-  .kategori .urunler{
-    grid-template-columns: repeat(4, minmax(0,1fr)) !important;
-    gap:16px !important; padding:10px 2px !important; justify-items:start !important;
-  }
-  @media (max-width: 1100px){ .kategori .urunler{ grid-template-columns: repeat(3, minmax(0,1fr)) !important; } }
-  @media (max-width: 900px){  .kategori .urunler{ grid-template-columns: repeat(2, minmax(0,1fr)) !important; } }
-  @media (max-width: 520px){  .kategori .urunler{ grid-template-columns: 1fr !important; } }
-
-  .urun{
-    background:#fff !important; border:1px solid #edf0f2 !important;
-    border-radius:10px !important; padding:12px !important;
-    box-shadow:none !important; transition:border-color .2s ease !important;
-  }
-  .urun:hover{ border-color:#dfe4e6 !important; }
-  .urun img{
-    width:100% !important; height:160px !important; object-fit:contain !important;
-    background:#fafbfb !important; border-radius:8px !important; padding:8px !important;
-  }
-  .urun p{ color:#0f1412 !important; text-shadow:none !important; }
-  .urun p:nth-of-type(2){ color: var(--muted) !important; font-size:13.2px !important; }
-  .urun p:nth-of-type(3){ color:#0f1412 !important; font-weight:700 !important; font-size:14.2px !important; }
-
-  /* Modal/banner: flat, white */
-  .modal{ background: rgba(0,0,0,.45) !important; backdrop-filter: blur(2px) !important; }
-  .modal-icerik{
-    background:#fff !important; color:#0e1512 !important; border:1px solid var(--line) !important;
-    border-radius:12px !important; box-shadow:none !important;
-  }
-  #urun-banner{ background:#0f1412 !important; border-bottom:1px solid #0f1412 !important; }
-  #urun-banner .close-btn{ color:#fff !important; }
-
-  /* Mobile polish */
-  @media (max-width: 900px){
-    .header{ position: sticky; top:0; z-index:100; }
-    .logo img{ width:180px !important; }
-    .search-box{ width:100% !important; order:3 !important; }
-    html{ font-size: clamp(15px, 1.6vw, 17px); }
-    .search-box input{ font-size:16px !important; } /* iOS zoom guard */
-  }
-  @media (max-width: 480px){
-    .kategori{ width: 96% !important; margin-left: 8px !important; }
-    .kategori-header{ min-height: 34px !important; padding:7px 10px !important; font-size:14px !important; }
+  /* Subtle motion reduction */
+  @media (prefers-reduced-motion: reduce){
+    .urunler{ transition: none !important; }
   }
 </style>
+
+
+<!-- === PREMIUM UI LAYER • Corporate/Premium JS (non-breaking) === -->
+<script id="premium-ui-js">
+(function(){
+  if (window.__premiumUILoaded) return; window.__premiumUILoaded = true;
+
+  // ----- Utilities -----
+  const $ = (sel, ctx=document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+
+  // Turkish-insensitive normalization (İ/ı/ş/ğ/ç/ö/ü)
+  const trMap = { 'İ':'i','I':'i','ı':'i','Ş':'s','ş':'s','Ğ':'g','ğ':'g','Ç':'c','ç':'c','Ö':'o','ö':'o','Ü':'u','ü':'u' };
+  function normalize(s){
+    return (s||"").toString()
+      .replace(/[İIıŞşĞğÇçÖöÜü]/g, m => trMap[m] || m)
+      .toLowerCase();
+  }
+
+  // Debounce
+  function debounce(fn, ms){ let t; return (...args)=>{ clearTimeout(t); t=setTimeout(()=>fn(...args), ms); }; }
+
+  // Slide open/close using max-height without breaking "display" logic
+  function slide(container, open){
+    if (!container) return;
+    container.classList.add("__animating");
+
+    // Ensure it's measurable
+    const prevDisplay = container.style.display;
+    if (open) container.style.display = getComputedStyle(container).display === "none" ? "grid" : getComputedStyle(container).display;
+
+    const full = container.scrollHeight;
+    container.style.maxHeight = open ? "0px" : full + "px"; // set start state
+    // Force reflow
+    container.getBoundingClientRect();
+
+    container.style.maxHeight = open ? (full + "px") : "0px";
+    container.style.opacity = open ? "1" : "0";
+
+    const done = ()=>{
+      container.classList.remove("__animating");
+      container.style.maxHeight = open ? "" : "0px";
+      container.style.opacity  = open ? "" : "0";
+      // Respect original "display" semantics
+      if (!open){
+        container.style.display = prevDisplay || "none";
+      } else {
+        container.style.display = "grid";
+      }
+      container.removeEventListener("transitionend", done);
+    };
+    container.addEventListener("transitionend", done);
+  }
+
+  // ----- Category accordions -----
+  function initCategories(){
+    $$(".kategori").forEach(cat => {
+      const header = $(".kategori-header", cat);
+      const list   = $(".urunler", cat);
+      if (!header || !list) return;
+
+      // ARIA
+      header.setAttribute("role","button");
+      header.setAttribute("tabindex","0");
+      const isOpen = list.style.display && list.style.display !== "none" || cat.classList.contains("open") || cat.getAttribute("aria-expanded")==="true";
+      cat.classList.toggle("open", !!isOpen);
+      header.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      if (!isOpen){ list.style.display = "none"; list.style.maxHeight = "0px"; }
+
+      const toggle = (toOpen) => {
+        const willOpen = (toOpen==null) ? !cat.classList.contains("open") : !!toOpen;
+        cat.classList.toggle("open", willOpen);
+        header.setAttribute("aria-expanded", willOpen ? "true" : "false");
+        slide(list, willOpen);
+        // rotate arrow if exists
+        const ok = $(".ok", header);
+        if (ok){ ok.classList.toggle("don", willOpen); }
+      };
+
+      header.addEventListener("click", () => toggle());
+      header.addEventListener("keydown", (e)=>{
+        if (e.key==="Enter" || e.key===" "){ e.preventDefault(); toggle(); }
+        if (e.key==="ArrowRight"){ toggle(true); }
+        if (e.key==="ArrowLeft"){ toggle(false); }
+      });
+
+      // Expose for search to open when matches appear
+      cat.__openCategory = ()=>toggle(true);
+      cat.__closeCategory= ()=>toggle(false);
+    });
+  }
+
+  // ----- Search (debounced, TR-insensitive, highlights) -----
+  function initSearch(){
+    const sb = $(".search-box input") || $(".search-box");
+    if (!sb) return;
+    const cats = $$(".kategori");
+
+    // helper: strip old <mark>
+    function stripMarks(el){
+      $$("mark.ui-hl", el).forEach(m=>{
+        const t = document.createTextNode(m.textContent);
+        m.replaceWith(t);
+      });
+    }
+    function highlight(el, query){
+      if (!query) return;
+      const q = normalize(query);
+      ["p"].forEach(tag=>{
+        $$(tag, el).forEach(p=>{
+          stripMarks(p);
+          const text = p.textContent;
+          const norm = normalize(text);
+          const idx = norm.indexOf(q);
+          if (idx>=0){
+            const before = text.slice(0, idx);
+            const match  = text.slice(idx, idx+query.length);
+            const after  = text.slice(idx+query.length);
+            p.innerHTML = "";
+            if (before) p.append(document.createTextNode(before));
+            const mark = document.createElement("mark"); mark.className="ui-hl"; mark.textContent = match;
+            p.append(mark);
+            if (after) p.append(document.createTextNode(after));
+          }
+        });
+      });
+    }
+
+    const run = ()=>{
+      const q = normalize(sb.value);
+      let any = false;
+      cats.forEach(cat=>{
+        const prods = $$(".urun", cat);
+        let catAny = false;
+        prods.forEach(card=>{
+          stripMarks(card);
+          const name = $("p", card)?.textContent || "";
+          const lines = $$( "p", card).map(p=>p.textContent).join(" ");
+          const norm = normalize(lines);
+          const hit = q.length===0 || norm.includes(q);
+          card.style.display = hit ? "" : "none";
+          if (hit){
+            catAny = true;
+            if (q) highlight(card, sb.value);
+          }
+        });
+        if (catAny){
+          cat.style.display = "";
+          if (q) cat.__openCategory && cat.__openCategory();
+          any = true;
+        } else {
+          // hide empty categories during search
+          if (q) cat.style.display = "none"; else cat.style.display = "";
+          if (!q) cat.__closeCategory && cat.__closeCategory();
+        }
+      });
+      // If no results, we could show a small toast (non-intrusive)
+    };
+
+    sb.addEventListener("input", debounce(run, 120));
+  }
+
+  // ----- Modal/Banner quality-of-life -----
+  function initModalQoL(){
+    const modal = $(".modal") || $("#product-modal-root");
+    if (!modal) return;
+    const closeEls = $$(".kapat, .close-btn, [data-close], [data-dismiss]", modal);
+    const openers = $$(".urun");
+
+    function lock(b){ document.body.classList.toggle("__lock", !!b); }
+
+    function close(){
+      modal.style.display = "none";
+      lock(false);
+    }
+    function open(){
+      modal.style.display = "flex";
+      lock(true);
+    }
+
+    // Delegate open if clicking a product (keep existing handler intact)
+    openers.forEach(card=>{
+      card.addEventListener("keydown", (e)=>{
+        if (e.key==="Enter"){ e.preventDefault(); card.click(); }
+      });
+      card.setAttribute("tabindex","0");
+      card.setAttribute("role","button");
+    });
+
+    // Close on overlay click
+    modal.addEventListener("click", (e)=>{
+      if (e.target === modal) close();
+    });
+    // Close buttons
+    closeEls.forEach(x=> x.addEventListener("click", close));
+
+    // ESC
+    window.addEventListener("keydown", (e)=>{
+      if (e.key==="Escape" && getComputedStyle(modal).display !== "none"){ close(); }
+    });
+  }
+
+  // Run once DOM ready (but do not interfere with existing scripts)
+  document.addEventListener("DOMContentLoaded", function(){
+    initCategories();
+    initSearch();
+    initModalQoL();
+  });
+})();
+</script>
 
 </body>
 </html>
