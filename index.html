@@ -1137,343 +1137,127 @@ header, .topbar, .logo-bar { background: transparent !important; }
 </style>
 
 
-<!-- === OLIVE NEO v10 (drop-in override) === -->
-<style id="olive-neo-v10">
+<!-- === APPLE CLEAN PRO v1.0 (Minimal Corporate White) === -->
+<style id="apple-clean-pro">
   :root{
-    --olive:#1A635A; --olive-2:#145149; --ink:#0f1412; --muted:#6b7b75;
-    --card:#ffffff; --bg:#f5f7f6; --edge:rgba(20,81,73,.12);
-    --ring:rgba(26,99,90,.28); --ring-2:rgba(26,99,90,.14);
-    --shadow:0 10px 30px rgba(0,0,0,.08);
+    --ink:#0e1512; --muted:#5f6b66; --line:#e6e9eb; --line-2:#dfe4e6;
+    --bg:#f6f7f8; --card:#ffffff; --accent:#0f1412;
   }
 
-  html,body{ background:
-    radial-gradient(900px 600px at 10% -10%, rgba(26,99,90,.06), transparent 55%),
-    linear-gradient(180deg,#f8faf9,#eef3f1 50%, #edf2f0);
-    color:var(--ink);
-    font-family: "Inter","Poppins",system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-  }
-
-  .header, .topbar, .logo-bar{
-    background: rgba(255,255,255,.75) !important;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border-bottom:1px solid var(--edge) !important;
-    box-shadow: var(--shadow);
-  }
-  .header{
-    display:flex; align-items:center; justify-content:space-between;
-    gap:14px; padding:14px 18px !important; text-align:left !important;
-  }
-  .logo{ display:flex; align-items:center; gap:10px; }
-  .logo img{ width:220px !important; height:auto; filter:none !important; }
-
-  .header .admin-btn{
-    position:static !important; order:2;
-    background:#fff !important; color:var(--olive) !important;
-    border:1px solid var(--ring-2); border-radius:12px; font-weight:700;
-    padding:10px 14px; box-shadow:0 4px 14px rgba(0,0,0,.06);
-  }
-  .header .admin-btn:hover{ box-shadow:0 8px 22px rgba(0,0,0,.10); transform:translateY(-1px); }
-
-  .search-box{
-    position:static !important; order:1;
-    display:flex; align-items:center; gap:8px;
-    background:rgba(26,99,90,.08) !important; border:1px solid var(--ring-2) !important;
-    border-radius:14px !important; padding:8px 12px 8px 36px !important;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 8px 20px rgba(0,0,0,.06) !important;
-    width:min(380px,40vw);
-  }
-  .search-box input{
-    color:#123 !important; width:100% !important; font-size:14.5px !important;
-  }
-  .search-box::before{ left:12px !important; opacity:.8; }
-
-  h1{ color:#143a34 !important; text-shadow:none !important; font-size:28px !important; margin:22px 0 8px !important; }
-
-  .kategori{
-    width:min(1200px,92%) !important; margin:18px auto !important;
-  }
-  .kategori-header{
-    background:#ffffff !important; color:#123 !important;
-    border:1px solid var(--edge) !important; border-left:4px solid var(--olive) !important;
-    border-radius:12px !important; padding:14px 16px !important; font-weight:700 !important;
-    letter-spacing:.2px; display:flex; align-items:center; gap:10px;
-    box-shadow: var(--shadow) !important; text-shadow:none !important;
-  }
-  .kategori-header:hover{ background:#f7faf9 !important; border-color:var(--ring) !important; }
-  .kategori-header .ok{ color:var(--olive) !important; font-weight:800 !important; }
-
-  .kategori .urunler{
-    display:grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
-    gap:20px !important; padding:14px 6px !important;
-  }
-  .urun{
-    background:var(--card) !important; border:1px solid var(--edge) !important;
-    border-radius:14px !important; box-shadow: var(--shadow) !important;
-    padding:14px !important; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-  }
-  .urun:hover{ transform: translateY(-4px); border-color:var(--ring); box-shadow:0 16px 30px rgba(0,0,0,.12); }
-  .urun img{
-    width:100% !important; height:180px !important; object-fit:contain !important;
-    background:#f6faf8; border-radius:10px; padding:8px;
-  }
-  .urun p{ color:#18221f !important; text-shadow:none !important; }
-  .urun p:nth-of-type(2){ color:var(--muted) !important; font-size:13.5px !important; }
-  .urun p:nth-of-type(3){ color:var(--olive) !important; font-weight:800 !important; font-size:15px !important; }
-
-  .modal{ background:rgba(0,0,0,.45) !important; backdrop-filter: blur(3px); }
-  .modal-icerik{
-    background:#fff !important; color:#111 !important; text-shadow:none !important;
-    border:1px solid var(--edge); border-radius:16px; box-shadow:0 16px 40px rgba(0,0,0,.18);
-  }
-  #urun-banner{
-    background:#17332f !important; border-bottom:3px solid var(--olive) !important;
-  }
-  #urun-banner .close-btn{ color:#fff !important; }
-
-  @media (max-width: 900px){
-    .header{ flex-wrap:wrap; gap:10px; }
-    .logo img{ width:190px !important; }
-    .search-box{ width:100% !important; order:3; }
-  }
-  @media (max-width:600px){
-    .kategori{ width:94% !important; }
-    .kategori .urunler{ grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap:12px !important; }
-    .urun img{ height:150px !important; }
-  }
-</style>
-
-
-<style id="olive-neo-v10-hotfix">
-  /* Kategori aç/kapa HOTFIX: varsayılan kapalı; JS açınca görünür */
-  .kategori .urunler{ display: none !important; }
-  .kategori .urunler[style*="display: block"],
-  .kategori .urunler[style*="display: grid"],
-  .kategori.acik .urunler,
-  .kategori.open .urunler,
-  .kategori[aria-expanded="true"] .urunler{
-    display: grid !important;
-  }
-</style>
-
-
-<!-- === OLIVE NEO v10.1 • Mobile Pack (responsive & touch) === -->
-<style id="olive-neo-v10-mobile-pack">
-  /* Fluid base type (prevents iOS zoom) */
-  html{ font-size: clamp(15px, 1.6vw, 17px); }
-  .search-box input{ font-size:16px !important; } /* iOS zoom guard */
-
-  /* Sticky header on mobile for quick search/access */
-  @media (max-width: 900px){
-    .header{ position: sticky; top:0; z-index: 100; }
-  }
-
-  /* Touch targets & spacing */
-  .kategori-header{
-    min-height: 48px; /* tap-target */
-    padding: 16px 18px !important;
-  }
-  .kategori-header .ok{
-    transition: transform .25s ease;
-  }
-  /* Arrow rotate when open */
-  .kategori.acik .kategori-header .ok,
-  .kategori.open .kategori-header .ok,
-  .kategori[aria-expanded="true"] .kategori-header .ok{ transform: rotate(180deg); }
-
-  /* Grid: scale across sizes */
-  .kategori .urunler{ grid-auto-rows: 1fr; }
-  @media (max-width: 900px){
-    .kategori{ width: 94% !important; }
-    .kategori .urunler{ grid-template-columns: repeat(2, minmax(0,1fr)) !important; gap:14px !important; }
-    .urun{ padding:12px !important; }
-    .urun img{ height: 160px !important; }
-  }
-  @media (max-width: 480px){
-    .kategori .urunler{ grid-template-columns: 1fr !important; gap:12px !important; }
-    .urun img{ height: 190px !important; }
-  }
-
-  /* Reduce heavy effects on mobile for performance */
-  @media (max-width: 768px){
-    .header, .kategori-header, .urun, .modal-icerik{
-      -webkit-backdrop-filter: blur(6px) !important;
-      backdrop-filter: blur(6px) !important;
-      box-shadow: 0 6px 16px rgba(0,0,0,.12) !important;
-    }
-  }
-
-  /* Search: full width and pinned last row on small screens */
-  @media (max-width: 900px){
-    .header{ flex-wrap: wrap; gap:10px; }
-    .search-box{ width:100% !important; order:3; }
-    .logo img{ width: 180px !important; }
-  }
-
-  /* Modal: image box stable height on small devices */
-  @media (max-width:600px){
-    #product-modal-root > div > div > div:first-child{
-      height: 240px !important; flex: 0 0 240px !important;
-    }
-    #product-modal-root img{
-      height: 100% !important; object-fit: contain !important;
-    }
-  }
-
-  /* Buttons tap feedback */
-  .admin-btn, .detay-btn{
-    transform: translateY(0); transition: transform .15s ease, box-shadow .2s ease;
-  }
-  .admin-btn:active, .detay-btn:active{ transform: translateY(1px); }
-
-  /* Accessibility: reduce motion */
-  @media (prefers-reduced-motion: reduce){
-    *{ transition: none !important; animation: none !important; }
-  }
-
-  /* Android tap-highlight fix */
-  *{ -webkit-tap-highlight-color: rgba(26,99,90,.08); }
-</style>
-
-
-<!-- === OLIVE NEO v10.2 • Categories Slim Pack === -->
-<style id="olive-neo-v10-categories-slim">
-  /* Container: more left‑aligned layout */
-  .kategori{
-    max-width: 1240px !important;
-    width: 98% !important;
-    margin: 14px 0 18px 14px !important; /* left bias */
-  }
-
-  /* Header: thinner, sleeker, modern */
-  .kategori-header{
-    background: linear-gradient(180deg,#fff, #fbfcfb) !important;
-    border:1px solid rgba(20,81,73,.14) !important;
-    border-left: 3px solid #1A635A !important; /* mint accent */
-    border-radius:10px !important;
-    padding:10px 14px !important; /* thinner */
-    font-family: "Inter","Poppins",system-ui,-apple-system,Segoe UI,Arial,sans-serif !important;
-    font-weight: 650 !important;
-    font-size: 15.5px !important;
-    letter-spacing:.2px !important;
-    color:#10211e !important;
-    text-shadow:none !important;
-    box-shadow: 0 6px 14px rgba(0,0,0,.06) !important;
-    gap:8px !important;
-  }
-  /* Remove heavy hover; use subtle lift */
-  .kategori-header:hover{
-    background:#f7faf9 !important;
-    border-color: rgba(26,99,90,.28) !important;
-    transform: translateY(-1px);
-    box-shadow: 0 10px 20px rgba(0,0,0,.08) !important;
-  }
-
-  /* Arrow: smaller, crisp */
-  .kategori-header .ok{
-    color:#1A635A !important;
-    font-weight:800 !important;
-    font-size: 16px !important;
-    margin-left:auto !important;
-  }
-
-  /* Grid: tighter, left‑anchored feel */
-  .kategori .urunler{
-    gap:16px !important;
-    padding: 10px 4px !important;
-    justify-items: start !important;
-    align-items: start !important;
-  }
-
-  /* Product card: slimmer vertical rhythm */
-  .urun{
-    border-radius:12px !important;
-    padding:12px !important;
-    box-shadow: 0 8px 18px rgba(0,0,0,.06) !important;
-  }
-  .urun img{ height:170px !important; }
-  .urun p{ line-height:1.22 !important; }
-
-  /* Mobile refinements */
-  @media (max-width: 900px){
-    .kategori{ width: 96% !important; margin-left: 10px !important; }
-    .kategori-header{ font-size:15px !important; padding:12px 14px !important; }
-  }
-  @media (max-width: 480px){
-    .kategori{ width: 96% !important; margin-left: 8px !important; }
-    .kategori-header{ font-size:14.5px !important; padding:12px !important; }
-    .kategori .urunler{ gap:12px !important; }
-  }
-</style>
-
-
-<!-- === OLIVE NEO v10.3 • Categories Ultra Slim Pro === -->
-<style id="olive-neo-v10-categories-ultraslim">
-  /* Reset heavy looks for a cleaner, pro tone */
-  .kategori, .kategori *{
+  html, body{
+    background: var(--bg) !important;
+    color: var(--ink) !important;
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Arial, sans-serif !important;
     text-shadow: none !important;
   }
 
-  /* Layout: stronger left alignment, tighter rhythm */
+  /* Header: flat white, subtle divider */
+  .header, .topbar, .logo-bar{
+    background:#fff !important;
+    -webkit-backdrop-filter:none !important; backdrop-filter:none !important;
+    box-shadow:none !important;
+    border-bottom:1px solid var(--line) !important;
+  }
+  .header{
+    display:flex !important; align-items:center !important; justify-content:space-between !important;
+    padding:12px 16px !important; text-align:left !important; gap:12px !important;
+  }
+  .logo{ display:flex; align-items:center; gap:8px; }
+  .logo img{ width:200px !important; height:auto !important; filter:none !important; }
+
+  /* Search: plain, quiet */
+  .search-box{
+    position:static !important;
+    display:flex !important; align-items:center !important; gap:8px !important;
+    background:#fff !important; border:1px solid var(--line) !important;
+    border-radius:10px !important; padding:8px 12px 8px 36px !important;
+    box-shadow:none !important; width:min(420px,40vw) !important;
+  }
+  .search-box::before{ left:12px !important; opacity:.7 !important; }
+  .search-box input{ color:#0e1512 !important; font-size:14.5px !important; width:100% !important; }
+
+  /* Login button: outline */
+  .header .admin-btn{
+    position:static !important; order:3;
+    background:#fff !important; color:#0e1512 !important;
+    border:1px solid var(--line) !important; border-radius:10px !important; font-weight:600 !important;
+    padding:9px 12px !important; box-shadow:none !important;
+  }
+  .header .admin-btn:hover{ border-color: var(--line-2) !important; background:#fafbfb !important; }
+
+  /* Title */
+  h1{ color:#111 !important; font-weight:700 !important; font-size:26px !important; margin:18px 0 6px !important; text-shadow:none !important; }
+
+  /* ===== Categories: ultra minimal, left-anchored ===== */
   .kategori{
-    max-width: 1180px !important;
-    width: 96% !important;
-    margin: 10px 0 14px 12px !!--important;
+    max-width: 1160px !important; width: 96% !important;
+    margin: 12px 0 16px 12px !important;  /* left bias */
   }
 
-  /* Ultra-slim header */
   .kategori-header{
     background:#fff !important;
-    border:1px solid rgba(16,33,30,.10) !important;
-    border-left:2px solid #1A635A !important;
+    border:1px solid var(--line) !important;
     border-radius:8px !important;
     padding:8px 12px !important;
-    min-height: 44px !important;
-    display:flex; align-items:center; gap:8px;
-    box-shadow:none !important;
-    color:#112724 !important;
-    font-family:"Inter","Poppins",system-ui,-apple-system,Segoe UI,Arial,sans-serif !important;
-    font-weight:600 !important;
-    font-size:14.8px !important;
-    letter-spacing:.15px !important;
+    min-height:36px !important;
+    display:flex !important; align-items:center !important; gap:8px !important;
+    box-shadow:none !important; color:#0e1512 !important;
+    font-weight:600 !important; font-size:14.5px !important; letter-spacing:.1px !important;
   }
-  .kategori-header:hover{
-    background:#f9fbfa !important;
-    border-color: rgba(26,99,90,.28) !important;
-    transform: translateY(-1px);
-  }
-  .kategori-header .ok{
-    margin-left:auto !important;
-    color:#1A635A !important;
-    font-size:15px !important;
-    font-weight:800 !important;
-  }
+  .kategori-header:hover{ background:#fafbfb !important; border-color: var(--line-2) !important; }
+  .kategori-header .ok{ margin-left:auto !important; color:#111 !important; font-weight:800 !important; font-size:14px !important; }
 
-  /* Product grid under slim headers: keep compact */
+  /* Keep categories CLOSED by default; open via JS (or .open/.acik/aria-expanded) */
+  .kategori .urunler{ display:none !important; }
+  .kategori .urunler[style*="display: block"],
+  .kategori .urunler[style*="display: grid"],
+  .kategori.open .urunler,
+  .kategori.acik .urunler,
+  .kategori[aria-expanded="true"] .urunler{ display:grid !important; }
+
+  /* Product grid and cards */
   .kategori .urunler{
-    gap:14px !important;
-    padding:10px 4px !important;
-    justify-items:start !important;
+    grid-template-columns: repeat(4, minmax(0,1fr)) !important;
+    gap:16px !important; padding:10px 2px !important; justify-items:start !important;
   }
+  @media (max-width: 1100px){ .kategori .urunler{ grid-template-columns: repeat(3, minmax(0,1fr)) !important; } }
+  @media (max-width: 900px){  .kategori .urunler{ grid-template-columns: repeat(2, minmax(0,1fr)) !important; } }
+  @media (max-width: 520px){  .kategori .urunler{ grid-template-columns: 1fr !important; } }
 
-  /* Optional: slimmer product cards for harmony (subtle) */
   .urun{
-    border-radius:10px !important;
-    padding:10px !important;
-    box-shadow:0 4px 10px rgba(0,0,0,.05) !important;
-    border:1px solid rgba(16,33,30,.06) !important;
+    background:#fff !important; border:1px solid #edf0f2 !important;
+    border-radius:10px !important; padding:12px !important;
+    box-shadow:none !important; transition:border-color .2s ease !important;
   }
-  .urun img{ height:160px !important; }
+  .urun:hover{ border-color:#dfe4e6 !important; }
+  .urun img{
+    width:100% !important; height:160px !important; object-fit:contain !important;
+    background:#fafbfb !important; border-radius:8px !important; padding:8px !important;
+  }
+  .urun p{ color:#0f1412 !important; text-shadow:none !important; }
+  .urun p:nth-of-type(2){ color: var(--muted) !important; font-size:13.2px !important; }
+  .urun p:nth-of-type(3){ color:#0f1412 !important; font-weight:700 !important; font-size:14.2px !important; }
 
-  /* Mobile tune */
+  /* Modal/banner: flat, white */
+  .modal{ background: rgba(0,0,0,.45) !important; backdrop-filter: blur(2px) !important; }
+  .modal-icerik{
+    background:#fff !important; color:#0e1512 !important; border:1px solid var(--line) !important;
+    border-radius:12px !important; box-shadow:none !important;
+  }
+  #urun-banner{ background:#0f1412 !important; border-bottom:1px solid #0f1412 !important; }
+  #urun-banner .close-btn{ color:#fff !important; }
+
+  /* Mobile polish */
   @media (max-width: 900px){
-    .kategori{ width: 95% !important; margin-left: 10px !important; }
-    .kategori-header{ font-size:14.5px !important; padding:10px 12px !important; min-height:42px !important; }
+    .header{ position: sticky; top:0; z-index:100; }
+    .logo img{ width:180px !important; }
+    .search-box{ width:100% !important; order:3 !important; }
+    html{ font-size: clamp(15px, 1.6vw, 17px); }
+    .search-box input{ font-size:16px !important; } /* iOS zoom guard */
   }
   @media (max-width: 480px){
-    .kategori{ width: 95% !important; margin-left: 8px !important; }
-    .kategori-header{ font-size:14px !important; padding:9px 12px !important; min-height:40px !important; }
+    .kategori{ width: 96% !important; margin-left: 8px !important; }
+    .kategori-header{ min-height: 34px !important; padding:7px 10px !important; font-size:14px !important; }
   }
 </style>
 
